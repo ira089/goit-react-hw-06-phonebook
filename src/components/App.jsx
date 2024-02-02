@@ -1,14 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import styles from './ContactForm/ContactForm.module.css';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './ContactList/Filter';
-import contactExample from '../redux/constants';
+// import contactExample from '../redux/constants';
 
 // const LS_Key_Contact = 'phoneContact';
 
 export const App = () => {
-  const [contacts, setCotacts] = useState(contactExample);
+  // const [contacts, setCotacts] = useState(contactExample);
   // const dispatch = useDispatch();
   // const addTask = () => dispatch(addContact({ contacts }));
   const [filter, setFilter] = useState('');
@@ -37,17 +37,17 @@ export const App = () => {
     setFilter(evt.target.value);
   };
 
-  const getFilteredContacts = () => {
-    if (!filter) {
-      return contacts;
-    }
-    const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLocaleLowerCase().includes(normalizedFilter)
-    );
-  };
+  // const getFilteredContacts = () => {
+  // if (!filter) {
+  //   return contacts;
+  // }
+  // const normalizedFilter = filter.toLowerCase();
+  // return contacts.filter(contact =>
+  //   contact.name.toLocaleLowerCase().includes(normalizedFilter)
+  // );
+  // };
 
-  const visibleContacts = getFilteredContacts();
+  // const visibleContacts = getFilteredContacts();
 
   return (
     <div className={styles.wrap}>
