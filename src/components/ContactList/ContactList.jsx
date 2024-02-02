@@ -1,10 +1,10 @@
-import { UseSelector, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from './ContactList.module.css';
 import ContactItems from '../ContactItems/ContactItems';
 
 const ContactList = () => {
   const items = useSelector(state => state.contacts.contacts);
-  // console.log(items)
+  console.log(items);
 
   const elements = items.map(item => (
     <ContactItems
