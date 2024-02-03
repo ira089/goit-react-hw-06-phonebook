@@ -3,8 +3,23 @@ import styles from './ContactList.module.css';
 import ContactItems from '../ContactItems/ContactItems';
 
 const ContactList = () => {
-  const items = useSelector(state => state.contacts.contacts);
-  console.log(items);
+  const contactsState = useSelector(state => state.contacts.contacts);
+  console.log(contactsState);
+
+  const filterState = useSelector(state => state.filter);
+  console.log(filterState);
+
+  const getFilteredContacts = () => {
+    if (!filterState) {
+      return contactsState;
+    }
+    const normalizedFilter = filterState.toLowerCase();
+    return contactsState.filter(contact =>
+      contact.name.toLocaleLowerCase().includes(normalizedFilter)
+    );
+  };
+
+  const items = getFilteredContacts();
 
   const elements = items.map(item => (
     <ContactItems
@@ -12,7 +27,6 @@ const ContactList = () => {
       id={item.id}
       number={item.number}
       name={item.name}
-      // deleteContact={deleteContact}
     />
   ));
   return <ul className={styles.list}>{elements}</ul>;

@@ -8,6 +8,7 @@ const contactSlice = createSlice({
   initialState: {
     contacts: contactExample,
   },
+  // state= {contacts: {contacts: contactExample}}
   reducers: {
     addContact(state, action) {
       state.contacts.push({
@@ -21,32 +22,6 @@ const contactSlice = createSlice({
     },
   },
 });
-
-// const contactSlice = createSlice({
-//   name: 'contacts',
-//   initialState: [],
-
-//   reducers: {
-//     addContact: {
-//       reducer: (state, { payload }) => {
-//         state.push(payload);
-//         console.log(state);
-//         console.log(payload);
-//       },
-
-//       prepare: data => {
-//         return {
-//           payload: {
-//             id: nanoid(),
-//             ...data,
-//           },
-//         };
-//       },
-//     },
-//     deleteBook: (state, { payload }) =>
-//       state.filter(item => item.id !== payload),
-//   },
-// });
 
 export const { addContact, deleteContact } = contactSlice.actions;
 export default contactSlice.reducer;
