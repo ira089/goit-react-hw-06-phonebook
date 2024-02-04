@@ -8,7 +8,7 @@ const ContactList = () => {
   console.log(contactsState);
 
   const filterState = useSelector(getFilter);
-  // console.log(filterState);
+  console.log(filterState);
 
   const getFilteredContacts = () => {
     if (!filterState) {
