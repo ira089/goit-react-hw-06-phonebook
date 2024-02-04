@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
-import { getFilter } from '../../redux/filterSlice';
+import { addFilter } from '../../redux/filterSlice';
 import styles from './ContactList.module.css';
 
 const Filter = () => {
   const dispatch = useDispatch();
 
   const changeFitler = ({ target }) => {
-    dispatch(getFilter(target.value));
+    dispatch(addFilter(target.value));
   };
 
   return (
