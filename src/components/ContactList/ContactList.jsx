@@ -5,7 +5,7 @@ import ContactItems from '../ContactItems/ContactItems';
 
 const ContactList = () => {
   const contactsState = useSelector(getContacts);
-  // console.log(contactsState);
+  console.log(contactsState);
 
   const filterState = useSelector(getFilter);
   // console.log(filterState);
@@ -21,7 +21,7 @@ const ContactList = () => {
   };
 
   const items = getFilteredContacts();
-  // console.log(items);
+  console.log(items);
 
   const elements = items.map(item => (
     <ContactItems
