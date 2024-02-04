@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { nanoid } from 'nanoid';
-import contactExample from '../redux/constants';
+// import contactExample from '../redux/constants';
 
 const contactSlice = createSlice({
   name: 'contacts',
   initialState: {
-    contacts: contactExample,
+    contacts: [],
   },
   // state= {contacts: {contacts: contactExample}}
   reducers: {
