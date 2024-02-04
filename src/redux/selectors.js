@@ -1,3 +1,2 @@
-export const getAllContacts = store => store.contacts.contacts;
-
-// export const qw = state => state.contacts;
+export const getContacts = state => state.contacts.contacts;
+export const getFilter = state => state.filter;

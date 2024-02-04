@@ -2,7 +2,6 @@ import styles from './ContactForm/ContactForm.module.css';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './ContactList/Filter';
-// const LS_Key_Contact = 'phoneContact';
 
 export const App = () => {
   return (

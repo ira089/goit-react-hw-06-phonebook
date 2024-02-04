@@ -2,36 +2,32 @@ import { useState, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { addContact } from '../../redux/contactClice';
+
 import { nanoid } from 'nanoid';
 import styles from './ContactForm.module.css';
+import { getContacts } from '../../redux/selectors';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const items = useSelector(state => state.contacts.contacts);
+  const items = useSelector(getContacts);
+  // console.log(items);
   const dispatch = useDispatch();
 
   const handleChangeName = ({ target }) => {
     const { value } = target;
-    // console.log(value);
-    // console.log(name);
     setName(value);
   };
 
   const handleChangeNumber = ({ target }) => {
     const { value } = target;
-    // console.log(value);
-    // console.log(name);
     setNumber(value);
   };
-  console.log(name);
-  console.log(number);
 
   const isDublicate = evt => {
-    console.log(evt);
+    // console.log(evt);
     const normalizedName = evt.toLowerCase();
-    // console.log(normalizedName);
     const dublicate = items.find(
       contact => contact.name.toLocaleLowerCase() === normalizedName
     );

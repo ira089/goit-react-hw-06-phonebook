@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux';
+import { getContacts, getFilter } from '../../redux/selectors';
 import styles from './ContactList.module.css';
 import ContactItems from '../ContactItems/ContactItems';
 
 const ContactList = () => {
-  const contactsState = useSelector(state => state.contacts.contacts);
-  console.log(contactsState);
+  const contactsState = useSelector(getContacts);
+  // console.log(contactsState);
 
-  const filterState = useSelector(state => state.filter);
-  console.log(filterState);
+  const filterState = useSelector(getFilter);
+  // console.log(filterState);
 
   const getFilteredContacts = () => {
     if (!filterState) {
@@ -20,6 +21,7 @@ const ContactList = () => {
   };
 
   const items = getFilteredContacts();
+  // console.log(items);
 
   const elements = items.map(item => (
     <ContactItems
