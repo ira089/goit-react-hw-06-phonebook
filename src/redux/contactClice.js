@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import hardSet from 'redux-persist/lib/stateReconciler/hardSet';
 import { nanoid } from 'nanoid';
 // import contactExample from '../redux/constants';
 
@@ -27,6 +28,7 @@ const contactSlice = createSlice({
 const persistConfig = {
   key: 'contactsLS',
   storage,
+  stateReconciler: hardSet,
 };
 
 export const contactReducer = persistReducer(
